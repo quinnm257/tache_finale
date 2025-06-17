@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  instrument_name: MyText
+  manufacturer: one
+  category: one
+
+two:
+  instrument_name: MyText
+  manufacturer: two
+  category: two

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: one
+  customer: one
+  repair_date: 2025-06-17
+  description: MyText
+  price: 9.99
+  payment_status: MyString
+
+two:
+  item: two
+  customer: two
+  repair_date: 2025-06-17
+  description: MyText
+  price: 9.99
+  payment_status: MyString

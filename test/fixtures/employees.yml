@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_name: MyText
+  store: one
+  position: MyString
+  hire_date: 2025-06-17
+  birth_date: 2025-06-17
+  phone: MyText
+  email: MyText
+
+two:
+  employee_name: MyText
+  store: two
+  position: MyString
+  hire_date: 2025-06-17
+  birth_date: 2025-06-17
+  phone: MyText
+  email: MyText

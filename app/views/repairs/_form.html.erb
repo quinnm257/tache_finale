@@ -1,0 +1,47 @@
+<%= form_with(model: repair) do |form| %>
+  <% if repair.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(repair.errors.count, "error") %> prohibited this repair from being saved:</h2>
+
+      <ul>
+        <% repair.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :item_id, style: "display: block" %>
+    <%= form.text_field :item_id %>
+  </div>
+
+  <div>
+    <%= form.label :customer_id, style: "display: block" %>
+    <%= form.text_field :customer_id %>
+  </div>
+
+  <div>
+    <%= form.label :repair_date, style: "display: block" %>
+    <%= form.date_field :repair_date %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.textarea :description %>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :payment_status, style: "display: block" %>
+    <%= form.text_field :payment_status %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
