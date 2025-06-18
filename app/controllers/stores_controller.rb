@@ -13,10 +13,12 @@ class StoresController < ApplicationController
   # GET /stores/new
   def new
     @store = Store.new
+    @countries = Country.all
   end
 
   # GET /stores/1/edit
   def edit
+    @countries = Country.all
   end
 
   # POST /stores or /stores.json
@@ -65,6 +67,6 @@ class StoresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def store_params
-      params.expect(store: [ :store_name, :adress, :phone, :country_id ])
+      params.expect(store: [ :store_name, :address, :phone, :country_id ])
     end
 end

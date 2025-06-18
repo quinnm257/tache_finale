@@ -13,10 +13,12 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @instruments = Instrument.all
   end
 
   # GET /items/1/edit
   def edit
+    @instruments = Instrument.all
   end
 
   # POST /items or /items.json

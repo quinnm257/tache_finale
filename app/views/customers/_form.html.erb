@@ -27,9 +27,17 @@
   </div>
 
   <div>
-    <%= form.label :delivery_adress, style: "display: block" %>
-    <%= form.textarea :delivery_adress %>
+    <%= form.label :delivery_address, style: "display: block" %>
+    <%= form.textarea :delivery_address %>
   </div>
+
+  <div>
+    <%= form.label :country_id, style: "display: block" %>
+    <%= form.collection_select :country_id,
+                  @countries,
+                  :id,
+                  :country_name,
+                  prompt: "Select a country" %>  </div>
 
   <div>
     <%= form.submit %>

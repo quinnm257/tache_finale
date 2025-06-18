@@ -13,10 +13,12 @@ class ManufacturersController < ApplicationController
   # GET /manufacturers/new
   def new
     @manufacturer = Manufacturer.new
+    @countries = Country.all
   end
 
   # GET /manufacturers/1/edit
   def edit
+    @countries = Country.all
   end
 
   # POST /manufacturers or /manufacturers.json

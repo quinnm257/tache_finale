@@ -13,8 +13,11 @@
 
   <div>
     <%= form.label :instrument_id, style: "display: block" %>
-    <%= form.text_field :instrument_id %>
-  </div>
+    <%= form.collection_select :instrument_id,
+                  @instruments,
+                  :id,
+                  :instrument_name,
+                  prompt: "Select an instrument" %>  </div>
 
   <div>
     <%= form.label :serial_number, style: "display: block" %>

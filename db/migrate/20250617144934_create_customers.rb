@@ -5,6 +5,7 @@ class CreateCustomers < ActiveRecord::Migration[8.0]
       t.text :email
       t.text :phone
       t.text :delivery_address
+      t.references :country, null: false, foreign_key: true
 
       t.timestamps
     end

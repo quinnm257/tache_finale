@@ -13,10 +13,14 @@ class InstrumentsController < ApplicationController
   # GET /instruments/new
   def new
     @instrument = Instrument.new
+    @manufacturers = Manufacturer.all
+    @categories = Category.all
   end
 
   # GET /instruments/1/edit
   def edit
+    @manufacturers = Manufacturer.all
+    @categories = Category.all
   end
 
   # POST /instruments or /instruments.json

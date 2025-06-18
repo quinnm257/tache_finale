@@ -13,10 +13,16 @@ class RepairsController < ApplicationController
   # GET /repairs/new
   def new
     @repair = Repair.new
+    @items = Item.all
+    @employees = Employee.all
+    @customers = Customer.all
   end
 
   # GET /repairs/1/edit
   def edit
+    @items = Item.all
+    @employees = Employee.all
+    @customers = Customer.all
   end
 
   # POST /repairs or /repairs.json

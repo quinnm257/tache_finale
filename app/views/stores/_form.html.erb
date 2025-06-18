@@ -17,8 +17,8 @@
   </div>
 
   <div>
-    <%= form.label :adress, style: "display: block" %>
-    <%= form.textarea :adress %>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.textarea :address %>
   </div>
 
   <div>
@@ -28,8 +28,11 @@
 
   <div>
     <%= form.label :country_id, style: "display: block" %>
-    <%= form.text_field :country_id %>
-  </div>
+    <%= form.collection_select :country_id,
+                  @countries,
+                  :id,
+                  :country_name,
+                  prompt: "Select a country" %>  </div>
 
   <div>
     <%= form.submit %>

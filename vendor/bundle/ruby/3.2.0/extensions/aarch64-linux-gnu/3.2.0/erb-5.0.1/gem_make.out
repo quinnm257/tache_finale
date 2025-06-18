@@ -1,0 +1,18 @@
+current directory: /home/admin/Documents/rails/tache_finale/vendor/bundle/ruby/3.2.0/gems/erb-5.0.1/ext/erb/escape
+/usr/bin/ruby3.2 -I/usr/lib/ruby/vendor_ruby extconf.rb
+creating Makefile
+
+current directory: /home/admin/Documents/rails/tache_finale/vendor/bundle/ruby/3.2.0/gems/erb-5.0.1/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250617-3826-a08ijd sitelibdir\=./.gem.20250617-3826-a08ijd clean
+
+current directory: /home/admin/Documents/rails/tache_finale/vendor/bundle/ruby/3.2.0/gems/erb-5.0.1/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250617-3826-a08ijd sitelibdir\=./.gem.20250617-3826-a08ijd
+compiling escape.c
+linking shared-object erb/escape.so
+
+current directory: /home/admin/Documents/rails/tache_finale/vendor/bundle/ruby/3.2.0/gems/erb-5.0.1/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250617-3826-a08ijd sitelibdir\=./.gem.20250617-3826-a08ijd install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20250617-3826-a08ijd/erb
+
+current directory: /home/admin/Documents/rails/tache_finale/vendor/bundle/ruby/3.2.0/gems/erb-5.0.1/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250617-3826-a08ijd sitelibdir\=./.gem.20250617-3826-a08ijd clean

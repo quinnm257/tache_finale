@@ -13,10 +13,14 @@ class OrderItemsController < ApplicationController
   # GET /order_items/new
   def new
     @order_item = OrderItem.new
+    @orders = Order.all
+    @items = Item.all
   end
 
   # GET /order_items/1/edit
   def edit
+    @orders = Order.all
+    @items = Item.all
   end
 
   # POST /order_items or /order_items.json

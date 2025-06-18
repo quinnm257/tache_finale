@@ -13,10 +13,13 @@ class CustomersController < ApplicationController
   # GET /customers/new
   def new
     @customer = Customer.new
+    @countries = Country.all
+
   end
 
   # GET /customers/1/edit
   def edit
+    @countries = Country.all
   end
 
   # POST /customers or /customers.json
@@ -65,6 +68,6 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.expect(customer: [ :customer_name, :email, :phone, :delivery_adress ])
+      params.expect(customer: [ :customer_name, :email, :phone, :delivery_address, :country ])
     end
 end

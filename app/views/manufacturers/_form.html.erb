@@ -18,8 +18,11 @@
 
   <div>
     <%= form.label :country_id, style: "display: block" %>
-    <%= form.text_field :country_id %>
-  </div>
+    <%= form.collection_select :country_id,
+                  @countries,
+                  :id,
+                  :country_name,
+                  prompt: "Select a country" %>  </div>
 
   <div>
     <%= form.label :email, style: "display: block" %>

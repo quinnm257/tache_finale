@@ -18,8 +18,11 @@
 
   <div>
     <%= form.label :store_id, style: "display: block" %>
-    <%= form.text_field :store_id %>
-  </div>
+    <%= form.collection_select :store_id,
+                  @stores,
+                  :id,
+                  :store_name,
+                  prompt: "Select a store" %>  </div>
 
   <div>
     <%= form.label :position, style: "display: block" %>

@@ -13,10 +13,14 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @customers = Customer.all
+    @employees = Employee.all
   end
 
   # GET /orders/1/edit
   def edit
+    @customers = Customer.all
+    @employees = Employee.all
   end
 
   # POST /orders or /orders.json
