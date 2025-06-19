@@ -9,13 +9,13 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
-body {
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+html, body, * {
+  font-family: "Georgia", serif !important;
 }
 
 .button {
   display: inline-block;
-  padding: 5px 11px;               
+  padding: 5px 10px;               
   color: white;                    
   background-color: #254D70;        
   text-decoration: none;
@@ -29,7 +29,7 @@ body {
 
 .adminbutton {
   display: inline-block;
-  padding: 5px 11px;               
+  padding: 5px 10px;               
   color: white;                    
   background-color: #702528;        
   text-decoration: none;

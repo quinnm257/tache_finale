@@ -19,6 +19,9 @@ gem "jbuilder"
 gem "faker"
 gem "devise", '~> 4.9.2'
 gem "pundit"
+gem 'image_processing', '~> 1.2'
+
+
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

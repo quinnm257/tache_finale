@@ -1,5 +1,6 @@
 require 'faker'
 
+
 namespace :seed do
 
   task :populatecategories => :environment do
@@ -182,7 +183,7 @@ namespace :seed do
     Item.find_each do |item|
       item.update!(model: Faker::Device.model_name)
     end
-    
+
   end
 
 end

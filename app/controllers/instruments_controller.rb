@@ -78,6 +78,6 @@ class InstrumentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def instrument_params
-      params.expect(instrument: [ :instrument_name, :category_id ])
+      params.expect(instrument: [ :instrument_name, :category_id, :photo, :image ])
     end
 end

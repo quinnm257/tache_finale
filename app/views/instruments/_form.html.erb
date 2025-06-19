@@ -25,6 +25,16 @@
                   :category_name,
                   prompt: "Select a category" %>  </div>
 
+  <div class="field">
+  <% if instrument.image.attached? %>
+    <%= image_tag instrument.image, style: "width: 200px; display: block" %>
+  <% end %>
+
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+  </div>
+
+
   <div>
     <%= form.submit %>
   </div>

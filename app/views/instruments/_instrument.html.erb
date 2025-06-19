@@ -13,4 +13,11 @@
     </p>
   <% end %>
 
+  <p>
+    <% if instrument.image.attached? %>
+    <%= image_tag instrument.image, style: "width: 200px; display: block" %>
+    <% end %>
+  </p>
+
+
 </div>
