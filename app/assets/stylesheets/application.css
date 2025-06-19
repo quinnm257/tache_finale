@@ -8,7 +8,12 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
-.header {
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.button {
   display: inline-block;
   padding: 5px 11px;               
   color: white;                    
@@ -19,6 +24,21 @@
   text-align: center;
   border: none;                    
   transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.adminbutton {
+  display: inline-block;
+  padding: 5px 11px;               
+  color: white;                    
+  background-color: #702528;        
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  border: none;                    
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .title-bar {
@@ -27,7 +47,7 @@
   padding: 20px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .site-title {

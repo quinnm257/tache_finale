@@ -3,8 +3,8 @@
 <%= render @manufacturer %>
 
 <div>
-  <%= link_to "Edit this manufacturer", edit_manufacturer_path(@manufacturer) %> |
-  <%= link_to "Back to manufacturers", manufacturers_path %>
+  <%= link_to "Edit this manufacturer", edit_manufacturer_path(@manufacturer), class: "adminbutton" %> |
+  <%= link_to "Back to manufacturers", manufacturers_path, class: "adminbutton" %>
 
-  <%= button_to "Destroy this manufacturer", @manufacturer, method: :delete %>
+  <%= button_to "Destroy this manufacturer", @manufacturer, method: :delete, class: "adminbutton" %>
 </div>

@@ -3,6 +3,7 @@ class RepairsController < ApplicationController
 
   # GET /repairs or /repairs.json
   def index
+    authorize Repair
     @repairs = Repair.all
   end
 

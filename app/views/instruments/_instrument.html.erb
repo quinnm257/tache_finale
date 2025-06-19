@@ -1,17 +1,16 @@
 <div id="<%= dom_id instrument %>">
+
+
   <p>
     <strong>Instrument name:</strong>
     <%= instrument.instrument_name %>
   </p>
 
-  <p>
-    <strong>Manufacturer:</strong>
-    <%= instrument.manufacturer.manufacturer_name %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= instrument.category.category_name %>
-  </p>
+  <% unless params[:category_id].present? %>
+    <p>
+      <strong>Category:</strong>
+      <%= instrument.category.category_name %>
+    </p>
+  <% end %>
 
 </div>

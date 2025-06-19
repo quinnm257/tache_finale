@@ -29,24 +29,42 @@
 
   <div class="title-bar">
   <h1 class="site-title">Quinn-tessential Music</h1>
-  <p class="catchphrase">Your sound, your story.</p>
+  <p class="catchphrase">do re mi fa so la ti </p>
   </div>
 
+  <div>
+    <% if user_signed_in? %>
+      <%= link_to 'Sign out', destroy_user_session_path, class: "button", data: { turbo_method: :delete} %>
+    <% else %>
+      <%= link_to 'Sign in', new_user_session_path, class: "button" %>
+    <% end %>
 
+    <%= link_to "Browse by Category", categories_path, class: "button" %>
+    <%= link_to "Browse by Instrument Type", instruments_path, class: "button" %>
+    <%= link_to "See All of our Instruments", items_path, class: "button" %>
+    <%= link_to "Instrument Manufacturers", manufacturers_path, class: "button" %> <%= link_to "See Our locations", stores_path, class: "button" %>
+  </div>
 
-
-  <%= link_to 'Sign in', new_user_session_path, class: "header" %>
-  <%= link_to "Categories", categories_path, class: "header" %>
-  <%= link_to "Countries", countries_path, class: "header" %>
-  <%= link_to "Customers", customers_path, class: "header" %>
-  <%= link_to "Employees", employees_path, class: "header" %>
-  <%= link_to "Instruments", instruments_path, class: "header" %>
-  <%= link_to "Items", items_path, class: "header" %>
-  <%= link_to "Manufacturers", manufacturers_path, class: "header" %>
-  <%= link_to "Order Items", order_items_path, class: "header" %>
-  <%= link_to "Orders", orders_path, class: "header" %>
-  <%= link_to "Repairs", repairs_path, class: "header" %>
-  <%= link_to "Stores", stores_path, class: "header" %>
+  <div>
+    <% if policy(Country).index? %>
+        <%= link_to "Countries", countries_path, class: "adminbutton" %>
+    <% end %>
+    <% if policy(Customer).index? %>
+      <%= link_to "Customers", customers_path, class: "adminbutton" %>
+    <% end %>
+    <% if policy(Employee).index? %>
+      <%= link_to "Employees", employees_path, class: "adminbutton" %>
+    <% end %>
+    <% if policy(OrderItem).index? %>
+      <%= link_to "Order Items", order_items_path, class: "adminbutton" %>
+    <% end %>
+    <% if policy(Order).index? %>
+      <%= link_to "Orders", orders_path, class: "adminbutton" %>
+    <% end %>
+    <% if policy(Repair).index? %>
+      <%= link_to "Repairs", repairs_path, class: "adminbutton" %>
+    <% end %>
+  </div>
 
 
   <body>

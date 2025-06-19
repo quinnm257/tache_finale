@@ -8,9 +8,15 @@
   <% @manufacturers.each do |manufacturer| %>
     <%= render manufacturer %>
     <p>
-      <%= link_to "Show this manufacturer", manufacturer %>
+      <% if policy(manufacturer).show? %>
+        <%= link_to "Show", manufacturer_path(manufacturer), class: "adminbutton" %>
+      <% end %>
+      <%= link_to "Show #{manufacturer.manufacturer_name} instruments", items_path(manufacturer_id: manufacturer.id), class: "button" %>
     </p>
+    <hr>
   <% end %>
 </div>
 
-<%= link_to "New manufacturer", new_manufacturer_path %>
+<% if policy(@manufacturers).create? %>
+  <%= link_to "New manufacturer", new_manufacturer_path, class: "adminbutton" %>
+<% end %>

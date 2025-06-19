@@ -16,13 +16,6 @@
     <%= form.textarea :instrument_name %>
   </div>
 
-  <div>
-    <%= form.label :manufacturer_id, style: "display: block" %>
-    <%= form.collection_select :manufacturer_id,
-                  @manufacturers,
-                  :id,
-                  :manufacturer_name,
-                  prompt: "Select a manufacturer" %>  </div>
 
   <div>
     <%= form.label :category_id, style: "display: block" %>

@@ -3,6 +3,7 @@ class CountriesController < ApplicationController
 
   # GET /countries or /countries.json
   def index
+    authorize Country
     @countries = Country.all
   end
 

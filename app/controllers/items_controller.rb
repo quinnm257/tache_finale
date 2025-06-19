@@ -3,26 +3,38 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    if params[:instrument_id].present?
+      @items = Item.where(instrument_id: params[:instrument_id])
+    elsif params[:manufacturer_id].present?
+      @items = Item.where(manufacturer_id: params[:manufacturer_id])
+    else
+      @items = Item.all
+    end
   end
 
   # GET /items/1 or /items/1.json
   def show
+    authorize Item
   end
 
   # GET /items/new
   def new
+    authorize Item
     @item = Item.new
     @instruments = Instrument.all
+    @manufacturers = Manufacturer.all
   end
 
   # GET /items/1/edit
   def edit
+    authorize Item
     @instruments = Instrument.all
+    @manufacturers = Manufacturer.all
   end
 
   # POST /items or /items.json
   def create
+    authorize Item
     @item = Item.new(item_params)
 
     respond_to do |format|
@@ -38,6 +50,7 @@ class ItemsController < ApplicationController
 
   # PATCH/PUT /items/1 or /items/1.json
   def update
+    authorize Item
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: "Item was successfully updated." }
@@ -51,6 +64,7 @@ class ItemsController < ApplicationController
 
   # DELETE /items/1 or /items/1.json
   def destroy
+    authorize Item
     @item.destroy!
 
     respond_to do |format|
@@ -67,6 +81,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.expect(item: [ :instrument_id, :serial_number, :description, :condition, :production_year, :price ])
+      params.expect(item: [ :instrument_id, :model, :manufacturer_id, :serial_number, :description, :condition, :production_year, :price ])
     end
 end

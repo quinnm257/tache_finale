@@ -3,6 +3,7 @@ class OrderItemsController < ApplicationController
 
   # GET /order_items or /order_items.json
   def index
+    authorize Order_item
     @order_items = OrderItem.all
   end
 

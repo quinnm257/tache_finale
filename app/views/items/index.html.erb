@@ -8,9 +8,14 @@
   <% @items.each do |item| %>
     <%= render item %>
     <p>
-      <%= link_to "Show this item", item %>
+      <% if policy(item).show? %>
+        <%= link_to "Show", item_path(item), class: "adminbutton" %>
+      <% end %>
     </p>
+    <hr>
   <% end %>
 </div>
 
-<%= link_to "New item", new_item_path %>
+<% if policy(@items).create? %>
+  <%= link_to "New item", new_item_path, class: "adminbutton" %>
+<% end %>

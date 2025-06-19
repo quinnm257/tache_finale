@@ -8,21 +8,25 @@ class StoresController < ApplicationController
 
   # GET /stores/1 or /stores/1.json
   def show
+    authorize Store
   end
 
   # GET /stores/new
   def new
+    authorize Store
     @store = Store.new
     @countries = Country.all
   end
 
   # GET /stores/1/edit
   def edit
+    authorize Store
     @countries = Country.all
   end
 
   # POST /stores or /stores.json
   def create
+    authorize Store
     @store = Store.new(store_params)
 
     respond_to do |format|
@@ -38,6 +42,7 @@ class StoresController < ApplicationController
 
   # PATCH/PUT /stores/1 or /stores/1.json
   def update
+    authorize Store
     respond_to do |format|
       if @store.update(store_params)
         format.html { redirect_to @store, notice: "Store was successfully updated." }
@@ -51,6 +56,7 @@ class StoresController < ApplicationController
 
   # DELETE /stores/1 or /stores/1.json
   def destroy
+    authorize Store
     @store.destroy!
 
     respond_to do |format|

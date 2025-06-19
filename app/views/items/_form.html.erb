@@ -20,6 +20,19 @@
                   prompt: "Select an instrument" %>  </div>
 
   <div>
+    <%= form.label :model, style: "display: block" %>
+    <%= form.textarea :model %>
+  </div>
+
+  <div>
+    <%= form.label :manufacturer_id, style: "display: block" %>
+    <%= form.collection_select :manufacturer_id,
+                  @manufacturers,
+                  :id,
+                  :manufacturer_name,
+                  prompt: "Select a manufacturer" %>  </div>
+
+  <div>
     <%= form.label :serial_number, style: "display: block" %>
     <%= form.textarea :serial_number %>
   </div>

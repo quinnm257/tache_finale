@@ -3,6 +3,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees or /employees.json
   def index
+    authorize Employee
     @employees = Employee.all
   end
 

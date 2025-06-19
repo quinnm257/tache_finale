@@ -15,7 +15,7 @@ namespace :seed do
   end
 
   task :populatecountries => :environment do
-    20.times do  
+    150.times do  
       Country.create!(
         country_name: Faker::Address.unique.country
       )
@@ -29,7 +29,7 @@ namespace :seed do
         customer_name: Faker::Name.unique.name,
         email: Faker::Internet.unique.email,
         phone: Faker::PhoneNumber.phone_number,
-        delivery_address: Faker::Address.full_address,
+        delivery_address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
         country: countries.sample
       )
     end
@@ -98,25 +98,23 @@ namespace :seed do
       category = Category.find_by(category_name: category_name)
 
       instrument_names.each do |instrument_name|
-        manufacturer = Manufacturer.all.sample
-        
         Instrument.create!(
           instrument_name: instrument_name,
           category: category,
-          manufacturer: manufacturer
         )
       end
     end
   end
 
   task :populateitems => :environment do
+    manufacturers = Manufacturer.all.to_a
     instruments = Instrument.all.to_a
     conditions = ["New", "Like New", "Used", "Refurbished", "Vintage"]
     
     100.times do
-      instrument = instruments.sample
       Item.create!(
-        instrument: instrument,
+        instrument: instruments.sample,
+        manufacturer: manufacturers.sample,
         serial_number: Faker::Device.serial,
         description: Faker::Lorem.sentence(word_count: 10),
         condition: conditions.sample,
@@ -177,6 +175,14 @@ namespace :seed do
         payment_status: payment_statuses.sample
       )
     end
+  end
+
+  task :populateitemmodels => :environment do
+    
+    Item.find_each do |item|
+      item.update!(model: Faker::Device.model_name)
+    end
+    
   end
 
 end

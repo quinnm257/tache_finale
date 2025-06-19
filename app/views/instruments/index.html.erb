@@ -8,9 +8,15 @@
   <% @instruments.each do |instrument| %>
     <%= render instrument %>
     <p>
-      <%= link_to "Show this instrument", instrument %>
+      <% if policy(instrument).show? %>
+        <%= link_to "Show", instrument_path(instrument), class: "adminbutton" %>
+      <% end %>
+      <%= link_to "Shop #{instrument.instrument_name}s", items_path(instrument_id: instrument.id), class: "button" %>
     </p>
+    <hr>
   <% end %>
 </div>
 
-<%= link_to "New instrument", new_instrument_path %>
+<% if policy(@instruments).create? %>
+  <%= link_to "New instrument", new_instrument_path, class: "adminbutton" %>
+<% end %>

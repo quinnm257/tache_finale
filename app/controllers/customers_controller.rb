@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
 
   # GET /customers or /customers.json
   def index
+    authorize Customer
     @customers = Customer.all
   end
 

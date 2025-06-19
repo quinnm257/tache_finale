@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_18_145819) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_18_234532) do
   create_table "categories", force: :cascade do |t|
     t.text "category_name"
     t.datetime "created_at", null: false
@@ -49,12 +49,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_18_145819) do
 
   create_table "instruments", force: :cascade do |t|
     t.text "instrument_name"
-    t.integer "manufacturer_id", null: false
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "manufacturer"
     t.index ["category_id"], name: "index_instruments_on_category_id"
-    t.index ["manufacturer_id"], name: "index_instruments_on_manufacturer_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -66,7 +65,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_18_145819) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "manufacturer_id", null: false
+    t.string "model"
     t.index ["instrument_id"], name: "index_items_on_instrument_id"
+    t.index ["manufacturer_id"], name: "index_items_on_manufacturer_id"
   end
 
   create_table "manufacturers", force: :cascade do |t|
@@ -132,6 +134,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_18_145819) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -139,8 +142,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_18_145819) do
   add_foreign_key "customers", "countries"
   add_foreign_key "employees", "stores"
   add_foreign_key "instruments", "categories"
-  add_foreign_key "instruments", "manufacturers"
   add_foreign_key "items", "instruments"
+  add_foreign_key "items", "manufacturers"
   add_foreign_key "manufacturers", "countries"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"

@@ -8,9 +8,17 @@
   <% @categories.each do |category| %>
     <%= render category %>
     <p>
-      <%= link_to "Show this category", category %>
+      <% if policy(category).show? %>
+        <%= link_to "Show", category_path(category), class: "adminbutton" %>
+      <% end %>
+      <%= link_to "Show instruments in this category", instruments_path(category_id: category.id), class: "button" %>
     </p>
+    <hr>
   <% end %>
+
 </div>
 
-<%= link_to "New category", new_category_path %>
+<% if policy(@categories).create? %>
+  <%= link_to "New category", new_category_path, class: "adminbutton" %>
+<% end %>
+

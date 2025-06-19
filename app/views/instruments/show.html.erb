@@ -3,8 +3,8 @@
 <%= render @instrument %>
 
 <div>
-  <%= link_to "Edit this instrument", edit_instrument_path(@instrument) %> |
-  <%= link_to "Back to instruments", instruments_path %>
+  <%= link_to "Edit this instrument", edit_instrument_path(@instrument), class: "adminbutton" %> |
+  <%= link_to "Back to instruments", instruments_path, class: "adminbutton" %>
 
-  <%= button_to "Destroy this instrument", @instrument, method: :delete %>
+  <%= button_to "Destroy this instrument", @instrument, method: :delete, class: "adminbutton" %>
 </div>

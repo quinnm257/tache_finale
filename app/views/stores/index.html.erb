@@ -8,9 +8,14 @@
   <% @stores.each do |store| %>
     <%= render store %>
     <p>
-      <%= link_to "Show this store", store %>
+      <% if policy(store).show? %>
+        <%= link_to "Show", store_path(store), class: "adminbutton" %>
+      <% end %>
     </p>
+    <hr>
   <% end %>
 </div>
 
-<%= link_to "New store", new_store_path %>
+<% if policy(@stores).create? %>
+  <%= link_to "New store", new_store_path, class: "adminbutton" %>
+<% end %>
